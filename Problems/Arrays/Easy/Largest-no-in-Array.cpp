@@ -2,14 +2,14 @@
 using namespace std;
 
 
-//Brute force approach is to sort the Array and return last element
+//Brute force->sort the Array and return last element
 int sortArr(vector<int>& arr){
     sort(arr.begin(),arr.end());
     return arr[arr.size()-1];
 }
 //T.C=O(nlogn) S.C=O(n)
 
-//Recursive approach
+//Better->Recursive approach
 int largestArr(vector <int>& array,int n){
     if(n==1){
         return array[0];
@@ -22,7 +22,7 @@ return largestArr(array,n-1);
 }
 //T.C=o(n), S.C=o(n)
 
-//Iterative approach
+//Optimal->Iterative approach
 int largestArr(const vector<int>& array) {
     int maxElement = array[0];
     for (int i = 1; i < array.size(); ++i) {
