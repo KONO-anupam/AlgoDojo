@@ -1,0 +1,53 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "g++ build",
+            "type": "shell",
+            "command": "/usr/bin/g++",  // Make sure to use the correct path to g++
+            "args": [
+                "-g",
+                "${workspaceFolder}/main.cpp",  // Path to your C++ source file
+                "-o",
+                "${workspaceFolder}/main"  // Output executable
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task to build C++ program"
+        }
+    ]
+}
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run C++ Program",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/main",  // Path to the compiled executable
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,  // Use an external terminal for output
+            "MIMode": "gdb",  // Use gdb for Linux/macOS. For Windows, use "miDebuggerPath": "path-to-gdb.exe"
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb",  // Change to your GDB path
+            "preLaunchTask": "g++ build",  // Compile the C++ file before launching the program
+            "miDebuggerArgs": "",
+            "logging": {
+                "engineLogging": false
+            }
+        }
+    ]
+}
+ 
