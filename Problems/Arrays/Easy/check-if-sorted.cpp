@@ -47,3 +47,4 @@ int main(){
 
     cout<<thisSorted(arr1,arr1.size());
 }
+//T.C=o(n) S.C=o(1)
